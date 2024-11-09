@@ -36,6 +36,7 @@ console.log(retraitSolde(solde,retrait))
 
 function soldeInteret(solde,tauxInteret){
     let soldeAvecInteret = (solde*tauxInteret)+solde
+    soldeAvecInteret = Math.round(soldeAvecInteret)
     return soldeAvecInteret
 }
 
@@ -66,6 +67,6 @@ console.log("Intérêts annuels de 3% ajoutés. Nouveau solde: "+soldeInteret(so
 
 historiqueOperations.push("Intérêts de 3%")
 
-for(let i = 0; i< historiqueOperations.length ; i++){
+for(let i = 0; i< historiqueOperations.length; i++){
     console.log(historiqueOperations[i] + " Indice :" + i)
 }
