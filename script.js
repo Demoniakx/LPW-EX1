@@ -69,4 +69,3 @@ historiqueOperations.push("Intérêts de 3%")
 for(let i = 0; i< historiqueOperations.length ; i++){
     console.log(historiqueOperations[i] + " Indice :" + i)
 }
-
