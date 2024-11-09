@@ -66,5 +66,7 @@ console.log("Intérêts annuels de 3% ajoutés. Nouveau solde: "+soldeInteret(so
 
 historiqueOperations.push("Intérêts de 3%")
 
-console.log(historiqueOperations)
+for(let i = 0; i< historiqueOperations.length ; i++){
+    console.log(historiqueOperations[i] + " Indice :" + i)
+}
 
