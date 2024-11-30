@@ -8,11 +8,13 @@ const historiqueOperations=[]
 
 function ajoutDepot(solde,depot){
     let nouveauSolde = solde + depot
+    console.log("Vous avez déposé " + depot + " euros. Nouveau solde: " + nouveauSolde + " euros")
     return nouveauSolde
 }
 
-console.log("Vous avez déposé " + depot + " euros. Nouveau solde: " + ajoutDepot(solde,depot) + " euros")
-historiqueOperations.push("Dépot de 200 euros")
+console.log(ajoutDepot(solde,depot))
+
+historiqueOperations.push("Dépôt de 200 euros")
 
 
 /* Retrait argent */
@@ -20,7 +22,8 @@ historiqueOperations.push("Dépot de 200 euros")
 function retraitSolde(solde,retrait){
     if(retrait <= solde){
         let soldeApresRetrait = solde - retrait
-        return retraitArgent ="Vous avez retire " + retrait + " euros. Nouveau solde: " + soldeApresRetrait + " euros"
+        console.log("Vous avez retiré " + retrait + " euros. Nouveau solde: " + soldeApresRetrait + " euros")
+        return soldeApresRetrait
     }else{
         return retraitArgent= "Solde insuffisant pour effectuer ce retrait"
     }
@@ -42,14 +45,14 @@ function soldeInteret(solde,tauxInteret){
 
 console.log("Intérêts annuels de 3% ajoutés. Nouveau solde : " + soldeInteret(solde,tauxInteret) + " euros")
 
-historiqueOperations.push("interets de 3%")
+historiqueOperations.push("Intérêts de 3%")
 
 /* Simulation de plusieurs opéraions */
 let nouveauDepot = 500
 
 console.log("Vous avez déposé "+ nouveauDepot +" euros. Nouveau solde: "+ ajoutDepot(solde,nouveauDepot)+ " euros")
 
-historiqueOperations.push("Dépot de 500 euros")
+historiqueOperations.push("Dépôt de 500 euros")
 
 solde = ajoutDepot(solde,nouveauDepot)
 
@@ -67,6 +70,4 @@ console.log("Intérêts annuels de 3% ajoutés. Nouveau solde: "+soldeInteret(so
 
 historiqueOperations.push("Intérêts de 3%")
 
-for(let i = 0; i< historiqueOperations.length; i++){
-    console.log(historiqueOperations[i] + " Indice :" + i)
-}
+console.table(historiqueOperations)
